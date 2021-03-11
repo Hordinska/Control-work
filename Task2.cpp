@@ -3,7 +3,7 @@
 
 using namespace std;
 
-void is_prime(int *arr, int len);
+
 
 int main(){
     int number;
@@ -19,18 +19,20 @@ int main(){
     //створюю масив де запишу числа
     int arr[count];
 
-    int i = 0;
+    int i = count;
     number = N;
     //розділяю число на масив
     while (number){
-        arr[i++] = number % 10;
+        arr[i--] = number % 10;
         number /= 10;
     }
 
-
     bool isPrime = true;
-    for(int i=0; i<count; i++) {
+
+    for(int i=0; i<=count; i++) {
+
         if(i%2 != 0) {
+
             for (int j=2; j<=(sqrt(abs(arr[i]))); j++){
                 if (arr[i]%j==0){
                     isPrime = false;
@@ -44,15 +46,11 @@ int main(){
 
     return 0;
 }
-void is_prime(int* arr, int len){
-
-}
-
 //1234
-//3 - this is a prime number
 //1 - this is a prime number
+//3 - this is a prime number
 
-//543781
-//8- this is not a prime number
-//3- this is not a prime number
-//5- this is not a prime number
+//12345
+//1 - this is a prime number
+//3 - this is a prime number
+//5 - this is a prime number
